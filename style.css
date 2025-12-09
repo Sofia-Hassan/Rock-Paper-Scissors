@@ -1,0 +1,9 @@
+button img{
+  width: 100px;
+  height: 100px;
+}
+
+.options{
+  display: flex;
+  gap: 50px;
+}
