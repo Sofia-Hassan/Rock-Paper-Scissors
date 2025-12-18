@@ -1,9 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+body{
+  font-family: Bungee;
+  color: rgb(38, 78, 91);
+  text-align: center;
+}
+
+.options button{
+  padding: 0%;
+}
+
 button img{
   width: 100px;
   height: 100px;
+  padding: 10px;
 }
 
 .options{
+  justify-content: center;
   display: flex;
   gap: 50px;
+}
+
+.result button{
+  font-family: inherit;
+  color: inherit;
+  padding: 10px;
+  border-radius: 10px;
+  border-color: inherit;
 }
