@@ -17,19 +17,18 @@ function playGame(x, y){
   if (round == 5){
     round = 0
     humanChoice.forEach(btn => btn.disabled = true )
-    let winner = humanScore > computerScore ? "you": "computer"
-    finalWinner.textContent = `Rounds up! Winner is: ${winner}`
+    let winner = humanScore > computerScore ? "You": "Computer"
+    finalWinner.textContent = `Rounds up! ${winner} wins`
     result_div.appendChild(finalWinner)
     playAgainbtn.textContent = `Play again`
     result_div.appendChild(playAgainbtn)
     playAgainbtn.addEventListener('click',playAgain)
 
-  }
-  
-  
+  } 
 }
 
 let humanScore = 0, computerScore = 0, round = 0
+const roundNo = document.querySelector('.round')
 const result_div = document.querySelector(".result")
 const resultText = document.createElement("h2")
 const resultChoices = document.createElement('p')
@@ -77,7 +76,8 @@ function playRound(humanChoice, computerChoice){
     computerScore += 1
   }
 
-  resultText.textContent = `Round ${round} ` + result
+  roundNo.textContent = `Round ${round} `
+  resultText.textContent =  result
   resultChoices.textContent = `Your Choice: ${humanChoice} \u00A0\u00A0\u00A0\u00A0\u00A0 Computer Choice: ${computerChoice}`
   result_div.appendChild(resultText)
   result_div.appendChild(resultChoices)
@@ -85,6 +85,7 @@ function playRound(humanChoice, computerChoice){
 
 function playAgain(){
   humanChoice.forEach(btn => btn.disabled = false )
+  roundNo.textContent = `Round 1`
   result_div.removeChild(resultText)
   result_div.removeChild(resultChoices)
   result_div.removeChild(finalWinner)
